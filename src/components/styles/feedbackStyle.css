@@ -1,0 +1,44 @@
+/* Style for the entire form */
+.formStyle {
+    display: grid;
+    place-items: center;
+    text-align: center;
+    height: 20vh;
+}
+
+.formStyle h1 {
+    font-size: 3rem;
+}
+
+/* Style for the subject line entry */
+.subjectStyle {
+    width: 40rem;
+    height: 3rem;
+    font-size: 2rem;
+    padding: 0 .5rem;
+}
+
+/* Style for the feedback textarea entry */
+.feedbackStyle {
+    width: 40rem;
+    height: 15rem;
+    font-size: 1.4rem;
+    padding: 0 .5rem;
+    resize: none;
+}
+
+/* Style for the labels */
+.labelStyle {
+    font-size: 1.8rem;
+}
+
+/* Style for the submit button */
+.submitStyle {
+    font-size: 1.3rem;
+    padding: .6rem 1rem;
+
+}
+
+.formStyle .submitStyle {
+    text-align: center;
+}

@@ -1,25 +1,33 @@
 import React from 'react';
-
 import settingsGear from '../assets/settings.png';
+
+import { NavLink } from 'react-router-dom';
 
 function Header() {
     return (
         <div style={headerStyle}>
-            <h1 style={logoStyle}>HonestWork</h1>
-            <img src={settingsGear} alt="Settings Gear" style={settingsStyle} />
+            <NavLink to="/" style={logoStyle}>
+                <h1>HonestWork</h1>
+            </NavLink>
+            <NavLink to="/settings">
+                <img src={settingsGear} alt="Settings Gear" style={settingsStyle} />
+            </NavLink>
+            
         </div>
     )
 }
 
 const headerStyle = {
     background: '#ECECEC',    
-    height: '100px'
+    height: '7rem'
 }
 
 const logoStyle = {
     color: '#000000',
-    padding: '0px 30px',
-    float: 'left'
+    padding: '.7rem 3rem',
+    float: 'left',
+    textDecoration: 'none',
+    verticalAlign: 'center'
 }
 
 const settingsStyle = {
