@@ -10,6 +10,7 @@ import Header from './components/Header';
 class App extends Component {
   render() {
     return (
+      // Routes the different pages to their paths
       <BrowserRouter>
         <Header />
         <div>
