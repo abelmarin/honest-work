@@ -1,4 +1,9 @@
-/* Style for the entire form */
+.add-feedback-btn {
+    width: 4.5rem;
+
+}
+
+/* Style for the feedback form */
 .formStyle {
     display: grid;
     place-items: center;

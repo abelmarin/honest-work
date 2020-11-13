@@ -1,0 +1,27 @@
+.header-style {
+    text-align: center;
+    margin: .8rem;
+}
+
+.project-component {
+    width: 10rem;
+    height: 8rem;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: #C4C4C4;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+.list {
+    /* padding: 2rem; */
+    display: inline-grid;
+    grid-template-columns: repeat(6, 10rem);
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.add-project-btn {
+    width: 4.5rem;
+    
+}

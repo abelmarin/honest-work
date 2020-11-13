@@ -1,0 +1,35 @@
+/* Style for Project page */
+.project-header {
+    text-align: center;
+}
+
+.project-btn-container {
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.add-task-btn {
+    width: 4rem;
+}
+
+.project-list {
+
+    /* padding: 2rem; */
+    display: inline-grid;
+    grid-template-columns: repeat(6, 10rem);
+    column-gap: 4rem;
+    row-gap: 2rem;
+}
+
+.task-component {
+
+    width: 10rem;
+    height: 8rem;
+    font-size: 1.6rem;
+    text-align: center;
+    background-color: #C4C4C4;
+    text-align: center;
+    /* justify-content: center; */
+}
+
+

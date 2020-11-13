@@ -9,6 +9,7 @@
 .settingsContainer h1, a {
     padding-left: 2rem;
     text-decoration: none;
+    color: black;
 }
 
 .settingsContainer h1:visited, a:visited {
