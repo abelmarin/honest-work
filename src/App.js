@@ -11,6 +11,9 @@ import Error from './components/Error';
 
 import { GlobalProvider } from './context/GlobalState';
 
+
+
+
 class App extends Component {
   render() {
     return (
@@ -34,4 +37,7 @@ class App extends Component {
   }
 }
 
+
+
 export default App;
+
