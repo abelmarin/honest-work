@@ -4,10 +4,12 @@ import AppReducer from './AppReducer';
 // Initial state
 const initialState = {
     //teams: [],
+    users: [],
     projects: [],
     tasks: [],
     comments: [],
     seenHome: false,
+    isLoggedIn: false,
     seenProject: false,
     seenFeedback: false
 }
@@ -37,6 +39,27 @@ export const GlobalProvider = ({ children }) => {
     function negateSeenHome() {
         dispatch({
             type: 'NEGATE_SEEN_HOME',
+        });
+    }
+
+    function negateLoggedIn() {
+        dispatch({
+            type: "NEGATE_LOGGED_IN"
+        });
+    }
+
+    // Actions for users
+    function deleteUser(id) {
+        dispatch({
+            type: 'DELETE_USER',
+            payload: id
+        });
+    }
+
+    function addUser(user) {
+        dispatch({
+            type: 'ADD_USER',
+            payload: user
         });
     }
 
@@ -84,19 +107,24 @@ export const GlobalProvider = ({ children }) => {
     }
 
     return (<GlobalContext.Provider value={{
+        users: state.users,
         projects: state.projects,
         tasks: state.tasks,
-        comments: state.tasks,
+        comments: state.comments,
         seenHome: state.seenHome,
+        isLoggedIn: state.isLoggedIn,
         seenProject: state.seenProject,
         seenComment: state.seenComment,
         deleteProject,
         addProject,
+        deleteUser,
+        addUser,
         deleteTask,
         addTask,
         deleteComment,
         addComment,
         negateSeenHome,
+        negateLoggedIn,
         negateSeenProject,
         negateSeenComment
     }}>

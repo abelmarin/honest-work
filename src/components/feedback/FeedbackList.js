@@ -12,19 +12,16 @@ export const FeedbackList = () => {
     const { comments, negateSeenComment, seenComment } = useContext(GlobalContext);
 
     return (
-        <div>
-            <ul className="list">
-                {comments.map(comment => (<FeedbackComponent key={comment.id} comment={comment} />))}
-                
-
-                <div className="btn" onClick={negateSeenComment}>
-                    <button>
-                        <img src={addCircle} alt="Add Circle" className="add-feedback-btn" />
-                    </button>
-                </div>
-                {seenComment ? <AddFeedback toggle={negateSeenComment} /> : null}
-            </ul>
+        <ul className="feedback-list">
+            {comments.map(comment => (<FeedbackComponent key={comment.id} comment={comment} />))}
             
-        </div>
+            <button className="add-feedback" onClick={negateSeenComment} >
+                <img src={addCircle} className="add-feedback-btn" alt="Add Circle" />
+                <div>Add Feedback</div>
+            </button>
+
+            {seenComment ? <AddFeedback toggle={negateSeenComment} /> : null}
+        </ul>
+            
     )
 }

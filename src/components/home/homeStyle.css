@@ -13,8 +13,9 @@
     /* justify-content: center; */
 }
 
-.list {
-    /* padding: 2rem; */
+.project-list {
+    list-style: none;
+    padding-left: 0;
     display: inline-grid;
     grid-template-columns: repeat(6, 10rem);
     column-gap: 4rem;

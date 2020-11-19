@@ -1,18 +1,27 @@
-import React, { Component } from 'react';
+import React, { useContext } from 'react';
 import { ProjectsList } from './ProjectsList';
+import { Login } from './Login';
 
 import './homeStyle.css';
 
-export default class Home extends Component {
+import { GlobalContext } from '../../context/GlobalState.js';
 
+export const Home = () => {
+    const { isLoggedIn } = useContext(GlobalContext);
 
-    render() {
+    if (isLoggedIn) {
         return (
-            
             <div>
                 <h1 className="header-style">List of Projects</h1>
                 <ProjectsList />
             </div>
         )
+    } else {
+        return (
+            <Login />
+        )
     }
+    
 }
+
+export default Home;

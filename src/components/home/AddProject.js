@@ -1,4 +1,4 @@
-import React, {useState, useContext} from 'react';
+import React, { useState, useContext } from 'react';
 import { GlobalContext } from '../../context/GlobalState.js';
 
 export const AddProject = () => {
@@ -28,7 +28,7 @@ export const AddProject = () => {
                     <label htmlFor="text">Project Name: </label>
                     <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
                 </div>
-                <button className="btn">Add Project</button>
+                <button className="create-project-btn">Add Project</button>
             </form>
         </div>
     )

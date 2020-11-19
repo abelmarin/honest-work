@@ -7,8 +7,6 @@ import { GlobalContext } from '../../context/GlobalState.js';
 
 
 export const ProjectComponent = ({ project }) => {
-    const { deleteProject } = useContext(GlobalContext);
-
     return (
             <Link to="/project" className="project-component">
                 {project.text}

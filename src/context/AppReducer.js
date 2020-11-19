@@ -10,10 +10,25 @@ export default (state, action) => {
                 ...state,
                 projects: [action.payload, ...state.projects]
             }
+        case 'DELETE_USER':
+            return {
+                ...state,
+                users: state.users.filter(user => user.id !== action.payload)
+            }
+        case 'ADD_USER':
+            return {
+                ...state,
+                users: [action.payload, ...state.users]
+            }
         case 'NEGATE_SEEN_HOME':
             return {
                 ...state,
                 seenHome: !state.seenHome
+            }
+        case 'NEGATE_LOGGED_IN':
+            return {
+                ...state,
+                isLoggedIn: !state.isLoggedIn
             }
         case 'DELETE_TASK':
             return {

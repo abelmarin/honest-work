@@ -1,6 +1,41 @@
+.feedback-list {
+    list-style: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+.feedback-component-wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 80%;
+    border: solid black 2px;
+    padding: 5px;
+    text-align: center;
+}
+
+/* Style for Add Feedback button  */
+.add-feedback {
+    border: solid black 2px;
+    border-radius: 20px;
+    background-color: white;
+    width: 7rem;
+    height: 6.5rem;
+    text-align: center;
+    margin-left: 0;
+}
+
 .add-feedback-btn {
     width: 4.5rem;
+    height: auto;
+}
 
+.add-feedback:hover {
+    background-color: #ECECEC;
 }
 
 /* Style for the feedback form */
@@ -11,11 +46,6 @@
     height: 20vh;
 }
 
-.formStyle h1 {
-    font-size: 3rem;
-}
-
-/* Style for the subject line entry */
 .subjectStyle {
     width: 40rem;
     height: 3rem;
@@ -23,7 +53,6 @@
     padding: 0 .5rem;
 }
 
-/* Style for the feedback textarea entry */
 .feedbackStyle {
     width: 40rem;
     height: 15rem;
@@ -32,16 +61,14 @@
     resize: none;
 }
 
-/* Style for the labels */
 .labelStyle {
-    font-size: 1.8rem;
+    font-size: 1.7rem;
 }
 
-/* Style for the submit button */
 .submitStyle {
     font-size: 1.3rem;
     padding: .6rem 1rem;
-
+    margin-bottom: 3rem;
 }
 
 .formStyle .submitStyle {

@@ -18,7 +18,7 @@ function Header() {
 }
 
 const headerStyle = {
-    background: '#ECECEC',    
+    background: '#ECECEC',
     height: '7rem'
 }
 

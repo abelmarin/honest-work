@@ -13,7 +13,7 @@ export const ProjectsList = () => {
 
     return (
         <div>
-            <ul className="list">
+            <ul className="project-list">
                 {projects.map(project => (<ProjectComponent key={project.id} project={project} />))}
                 
 
