@@ -1,30 +1,54 @@
-import React, { useContext } from 'react';
+import React, { useState, useContext } from 'react';
 import { ProjectComponent } from './ProjectComponent';
-import { AddProject } from './AddProject';
-
-import './homeStyle.css';
-
 import { GlobalContext } from '../../context/GlobalState.js';
 
+import './homeStyle.css';
 import addCircle from '../../assets/addCircle.png';
 
-export const ProjectsList = () => {
-    const { projects, negateSeenHome, seenHome } = useContext(GlobalContext);
+export const ProjectsList = ({ initialShowPopup }) => {
+    const { projects, addProject } = useContext(GlobalContext);
+
+    const [text, setText] = useState('');
+    const [showPopup, negateShowPopup] = useState(initialShowPopup);
+
+    const onSubmit = e => {
+        e.preventDefault();
+
+        const newProject = {
+            id: Math.floor(Math.random() * 100000000),
+            text
+        }
+
+        addProject(newProject);
+        togglePopup();
+    }
+
+    function togglePopup() {
+        negateShowPopup(!showPopup);
+    }
 
     return (
-        <div>
-            <ul className="project-list">
-                {projects.map(project => (<ProjectComponent key={project.id} project={project} />))}
+        <ul className="project-list">
+            {projects.map(project => (<ProjectComponent key={project.id} project={project} />))}
                 
+            <button className="add-project" onClick={togglePopup} >
+                <img src={addCircle} className="add-project-btn" alt="Add Circle" />
+                <div>Create New Project</div>
+            </button>
 
-                <div >
-                    <button className="btn" onClick={negateSeenHome}>
-                        <img src={addCircle} alt="Add Circle" className="add-project-btn" />
-                    </button>
-                </div>
-                {seenHome ? <AddProject toggle={negateSeenHome} /> : null}
-            </ul>
-            
-        </div>
+            {showPopup ? 
+                <div>
+                    <span className="close" onClick={togglePopup}>&times;</span>
+                    <form onSubmit={onSubmit}>
+                        <h3>Add new Project</h3>
+                        <div className="form-control">
+                            <label htmlFor="text">Project Name: </label>
+                            <input type="text" value={text} onChange={(e) => setText(e.target.value)} placeholder="Enter text..." />
+                        </div>
+                        <button className="create-project-btn">Create New Project</button>
+                    </form>
+                </div> : null}
+        </ul>
+       
     )
 }

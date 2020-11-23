@@ -1,42 +1,51 @@
 import React, { useState, useContext } from 'react';
-
-import './homeStyle.css';
-
-import { Link } from 'react-router-dom';
-
+import { Link, useHistory } from 'react-router-dom';
 import { GlobalContext } from '../../context/GlobalState.js';
 
+import './homeStyle.css';
+import stringsToHash from '../../scripts/hash';
+
 export const Login = () => {
-    const [email, setEmail] = useState('');
+    const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { users, isLoggedIn, negateLoggedIn } = useContext(GlobalContext);
+    const history = useHistory();
+
+    const { users, negateLoggedIn, addUser } = useContext(GlobalContext);
 
     function validateForm() {
-        return !(email.length > 0 && password.length > 0);
+        return !(username.length > 0 && password.length > 0);
     }
 
-    const checkUser = e => {
+    const checkUserExists = function(hash) {
+        for(var i =0; i < users.length; i++) {
+            if (users[i].id === hash) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    const onSubmit = e => {
         e.preventDefault();
 
-        const potentialUser = {
+        var hash = stringsToHash(username,password);
 
+        if (checkUserExists(hash)) {
+            negateLoggedIn();
         }
 
-        const loggedInOrNot = users.includes();
-        return email.length > 0 && password.length > 0 && isLoggedIn;
     }
 
-    
 
     return (
         <div className="login">
             <h1>Login</h1>
-            <form onSubmit={checkUser}>
-                <label>Email:</label>
+            <form onSubmit={onSubmit}>
+                <label>Username:</label>
                 <input type="text"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)} />
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)} />
                 <label>Password:</label>
                 <input type="text"
                     value={password}

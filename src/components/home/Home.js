@@ -13,7 +13,7 @@ export const Home = () => {
         return (
             <div>
                 <h1 className="header-style">List of Projects</h1>
-                <ProjectsList />
+                <ProjectsList initialShowPopup={false} />
             </div>
         )
     } else {

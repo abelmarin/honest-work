@@ -20,11 +20,6 @@ export default (state, action) => {
                 ...state,
                 users: [action.payload, ...state.users]
             }
-        case 'NEGATE_SEEN_HOME':
-            return {
-                ...state,
-                seenHome: !state.seenHome
-            }
         case 'NEGATE_LOGGED_IN':
             return {
                 ...state,
@@ -40,11 +35,6 @@ export default (state, action) => {
                 ...state,
                 tasks: [action.payload, ...state.tasks]
             }
-        case 'NEGATE_SEEN_PROJECT':
-            return {
-                ...state,
-                seenProject: !state.seenProject
-            }
         case 'DELETE_COMMENT':
             return {
                 ...state,
@@ -54,11 +44,6 @@ export default (state, action) => {
             return {
                 ...state,
                 comments: [action.payload, ...state.comments]
-            }
-        case 'NEGATE_SEEN_COMMENT':
-            return {
-                ...state,
-                seenComment: !state.seenComment
             }
         default:
             return state;

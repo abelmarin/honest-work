@@ -1,16 +1,17 @@
 import React, { useState, useContext } from 'react';
+import { useHistory  } from 'react-router-dom';
+import { GlobalContext } from '../../context/GlobalState.js';
 
 import './homeStyle.css';
-
 import stringsToHash from '../../scripts/hash';
-
-import { GlobalContext } from '../../context/GlobalState.js';
 
 export const Register = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const { users, addUser, isLoggedIn, negateLoggedIn } = useContext(GlobalContext);
+    const history = useHistory();
+
+    const { users, addUser, negateLoggedIn } = useContext(GlobalContext);
 
     function validateForm() {
         return !(username.length > 0 && password.length > 0);
@@ -30,21 +31,23 @@ export const Register = () => {
 
         var hash = stringsToHash(username,password);
 
-        if (checkUserExists(hash)) {
+        var honestPointsCounter = 0;
 
+        if (checkUserExists(hash)) {
+            negateLoggedIn();
+            history.push("/");
         }
 
         const newUser = {
             id: hash,
             username,
-            password
+            password,
+            honestPointsCounter
         }
-
-        console.log(hash);
-        console.log(users)
 
         addUser(newUser);
         negateLoggedIn();
+        history.push("/");console.log(users);
     }
 
     return (

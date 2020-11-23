@@ -22,7 +22,27 @@
     row-gap: 2rem;
 }
 
+/* Style for Add Feedback button  */
+.add-project {
+    border: solid black 2px;
+    border-radius: 20px;
+    background-color: white;
+    width: 8.5rem;
+    height: 6.5rem;
+    text-align: center;
+    margin-left: 10px;
+}
+
 .add-project-btn {
     width: 4.5rem;
+    height: auto;
+}
+
+.add-project:hover {
+    background-color: #ECECEC;
+}
+
+/* Styles for login */
+.login {
     
 }

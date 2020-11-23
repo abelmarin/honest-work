@@ -13,7 +13,7 @@ export default class Project extends Component {
                     <Link to='/feedback'><button>Feedback</button></Link>
                     <Link to='/leaderboard'><button>HP Leaderboard</button></Link>
                 </div>
-                <TaskList />
+                <TaskList initialShowPopup={false} />
             </div>
         )
     }

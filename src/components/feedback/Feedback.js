@@ -10,7 +10,7 @@ export default class Feedback extends Component {
         return (
             <div>
                 <h1 className="header-style">List of Feedback</h1>
-                <FeedbackList />
+                <FeedbackList initialShowPopup={false} />
             </div>
         )
     }

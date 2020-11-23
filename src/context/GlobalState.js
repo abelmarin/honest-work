@@ -8,10 +8,7 @@ const initialState = {
     projects: [],
     tasks: [],
     comments: [],
-    seenHome: false,
-    isLoggedIn: false,
-    seenProject: false,
-    seenFeedback: false
+    isLoggedIn: false
 }
 
 // Create context
@@ -33,12 +30,6 @@ export const GlobalProvider = ({ children }) => {
         dispatch({
             type: 'ADD_PROJECT',
             payload: project
-        });
-    }
-
-    function negateSeenHome() {
-        dispatch({
-            type: 'NEGATE_SEEN_HOME',
         });
     }
 
@@ -79,12 +70,6 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
-    function negateSeenProject() {
-        dispatch({
-            type: 'NEGATE_SEEN_PROJECT',
-        });
-    }
-
     // Actions for Feedback page
     function deleteComment(id) {
         dispatch({
@@ -100,21 +85,12 @@ export const GlobalProvider = ({ children }) => {
         });
     }
 
-    function negateSeenComment() {
-        dispatch({
-            type: 'NEGATE_SEEN_COMMENT',
-        });
-    }
-
     return (<GlobalContext.Provider value={{
         users: state.users,
         projects: state.projects,
         tasks: state.tasks,
         comments: state.comments,
-        seenHome: state.seenHome,
         isLoggedIn: state.isLoggedIn,
-        seenProject: state.seenProject,
-        seenComment: state.seenComment,
         deleteProject,
         addProject,
         deleteUser,
@@ -123,10 +99,7 @@ export const GlobalProvider = ({ children }) => {
         addTask,
         deleteComment,
         addComment,
-        negateSeenHome,
-        negateLoggedIn,
-        negateSeenProject,
-        negateSeenComment
+        negateLoggedIn
     }}>
         {children}
     </GlobalContext.Provider>);
