@@ -1,10 +1,7 @@
 const Pool = require("pg").Pool;
+const connectionString = "postgres://rxkbjjfwemowma:b5dc5cd4e8210995f13140584a3b348b961d166a8040d35f7f04dd615f448e4c@ec2-52-203-165-126.compute-1.amazonaws.com:5432/d6qfu3oi07utsm";
 const pool = new Pool({
-	user: "my_user",
-	host: "localhost",
-	database: "my_database",
-	password: "root",
-	port: 5432,
+	connectionString,
 });
 
 const getFeedback = () => {
