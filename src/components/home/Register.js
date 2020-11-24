@@ -52,8 +52,8 @@ export const Register = () => {
 
     return (
         <div className="register">
-            <h1>Create Your account!</h1>
-            <form onSubmit={onSubmit}>
+            <h1>Create Your Account!</h1>
+            <form onSubmit={onSubmit} className="register-form">
                 <label>Username:</label>
                 <input type="text"
                     value={username}

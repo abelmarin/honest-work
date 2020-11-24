@@ -41,7 +41,7 @@ export const Login = () => {
     return (
         <div className="login">
             <h1>Login</h1>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onSubmit} className="login-form">
                 <label>Username:</label>
                 <input type="text"
                     value={username}
@@ -53,7 +53,7 @@ export const Login = () => {
                 <button className="login-btn" disabled={validateForm()}>Login</button>
             </form>
             <h3>Not a user? Register here:</h3>
-            <Link to="register">Sign up!</Link>
+            <Link to="register" className="register-link">Sign up!</Link>
         </div>
     );
 };

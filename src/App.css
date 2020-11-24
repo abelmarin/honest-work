@@ -9,5 +9,5 @@
     flex:1;
     display: inline;
     float: none;
-    /*text-align: center; */
+    min-height: 100%;
 }
