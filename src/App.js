@@ -10,7 +10,10 @@ import Settings from './components/settings/Settings';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Leaderboard from './components/feedback/Leaderboard';
+import ToS from './components/legal/ToS';
+import Privacy from './components/legal/Privacy';
 import Error from './components/Error';
+
 
 import { GlobalProvider } from './context/GlobalState';
 
@@ -34,7 +37,10 @@ class App extends Component {
                   <Route path="/feedback" component={Feedback} exact />
                   <Route path="/leaderboard" component={Leaderboard} exact />
                   <Route path="/register" component={Register} exact />
+                  <Route path="/tos" component={ToS} exact />
+                  <Route path="/privacy" component={Privacy} exact />
                   <Route component={Error} />
+                  
                 </Switch>
               </div>
             </div>
