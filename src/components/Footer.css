@@ -7,17 +7,17 @@
     bottom: 0;
     width: 100%;
     text-align: left;
-  }
+}
 
-  .col {
+.col {
     float: left;
     width: 33.33%;
-  }
+}
   
   /* Clear floats after the columns */
-  .row:after {
+.row:after {
     content: "";
     display: table;
     clear: both;
 
-  }
+}

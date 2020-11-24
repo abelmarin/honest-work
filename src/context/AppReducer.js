@@ -25,6 +25,11 @@ export default (state, action) => {
                 ...state,
                 isLoggedIn: !state.isLoggedIn
             }
+        case 'SET_CURR_USER':
+            return {
+                ...state,
+                currUser: state.user
+            }
         case 'DELETE_TASK':
             return {
                 ...state,

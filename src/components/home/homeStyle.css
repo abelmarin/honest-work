@@ -44,5 +44,49 @@
 
 /* Styles for login */
 .login {
-    padding-left: 2em;    
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+}
+
+.login-form {
+    width: 20%;
+    display: flex;
+    margin: auto;
+    flex-direction: column;
+}
+
+.login-form button {
+    margin: 10px auto;
+    width: 4rem;
+
+}
+
+.login-form label {
+    padding-bottom: 10px;
+}
+
+.register-link {
+    padding: 0;
+}
+
+/* Styles for register page */
+.register {
+    text-align: center;
+}
+
+.register-form {
+    display: flex;
+    flex-direction: column;
+    width: 15%;
+    margin: auto;
+}
+
+.register-form label {
+    padding-bottom: 10px;
+}
+
+.register-form button {
+    width: 5rem;
+    margin: 10px auto;
 }

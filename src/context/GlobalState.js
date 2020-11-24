@@ -3,12 +3,12 @@ import AppReducer from './AppReducer';
 
 // Initial state
 const initialState = {
-    //teams: [],
     users: [],
     projects: [],
     tasks: [],
     comments: [],
-    isLoggedIn: false
+    isLoggedIn: false,
+    currUser: {}
 }
 
 // Create context
@@ -36,6 +36,13 @@ export const GlobalProvider = ({ children }) => {
     function negateLoggedIn() {
         dispatch({
             type: "NEGATE_LOGGED_IN"
+        });
+    }
+
+    function setCurrUser(user) {
+        dispatch({
+            type: 'SET_CURR_USER',
+            payload: user
         });
     }
 
@@ -91,6 +98,7 @@ export const GlobalProvider = ({ children }) => {
         tasks: state.tasks,
         comments: state.comments,
         isLoggedIn: state.isLoggedIn,
+        currUser: state.currUser,
         deleteProject,
         addProject,
         deleteUser,
@@ -99,7 +107,8 @@ export const GlobalProvider = ({ children }) => {
         addTask,
         deleteComment,
         addComment,
-        negateLoggedIn
+        negateLoggedIn,
+        setCurrUser
     }}>
         {children}
     </GlobalContext.Provider>);
